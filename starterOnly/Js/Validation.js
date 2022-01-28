@@ -9,7 +9,6 @@ const checkbox1 = document.getElementById('checkbox1');
 const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
 const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
-
 // Check names
 function checkFirstName() {
     if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
@@ -21,7 +20,6 @@ function checkFirstName() {
     first.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
-
 function checkLastName() {
     if (lastName.value.trim().length < 2 || last.value.trim() === "" || !lastName.value.match(regex)) {
         lastName.parentElement.setAttribute('data-error-visible', 'true');
@@ -32,7 +30,6 @@ function checkLastName() {
     last.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
-
 // Check mail
 function checkEmail() {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -45,9 +42,9 @@ function checkEmail() {
     email.style.border = '2px solid #e54858';
     return false;
 }
-
 // Check birthdate
-function checkBirthdate() {
+
+function checkBirth() {   
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
         birthdate.style.border = '2px solid #e54858';
@@ -57,9 +54,8 @@ function checkBirthdate() {
     birthdate.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
-
 // Check number 
-function checkTournamentsQuantity() {
+function checkTournaments() {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
         quantity.parentElement.setAttribute('data-error-visible', 'true');
         quantity.style.border = '2px solid #e54858';
@@ -69,7 +65,6 @@ function checkTournamentsQuantity() {
     quantity.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
-
 // Check loc
 function checkLocations() {
     allLocations.setAttribute('data-error-visible', 'true');
@@ -81,7 +76,6 @@ function checkLocations() {
     }
     return false;
 }
-
 // Check conditions
 function checkCheckBox() {
     if (checkbox1.checked === false) {
@@ -91,25 +85,24 @@ function checkCheckBox() {
     checkbox1.parentElement.setAttribute('data-error-visible', 'false');
     return true;
 }
-
 // Event form
-function formFieldsValidation(element, method, event) {
+function Validation(element, method, event) {
     element.addEventListener(event, method);
 }
-formFieldsValidation(firstName, checkFirstName, 'focusout');
-formFieldsValidation(lastName, checkLastName, 'focusout');
-formFieldsValidation(email, checkEmail, 'focusout');
-formFieldsValidation(birthdate, checkBirthdate, 'focusout');
-formFieldsValidation(quantity, checkTournamentsQuantity, 'focusout');
-formFieldsValidation(allLocations, checkLocations, 'change');
-formFieldsValidation(checkbox1, checkCheckBox, 'change');
+Validation(firstName, checkFirstName,  'submit');
+Validation(lastName, checkLastName,  'submit');
+Validation(email, checkEmail,'submit');
+Validation(birthdate, checkBirth,  'submit');
+Validation(quantity, checkTournaments, 'submit');
+Validation(allLocations, checkLocations, 'submit');
+Validation(checkbox1, checkCheckBox, 'submit');
 
-function forAllFieldsValidation() {
+function forAllValidation() {
     checkFirstName()
     checkLastName()
     checkEmail()
-    checkBirthdate()
-    checkTournamentsQuantity()
+    checkBirth()
+    checkTournaments()
     checkLocations()
     checkCheckBox()
 }
@@ -118,8 +111,8 @@ function formValidation() {
     if (checkFirstName() === true &&
         checkLastName() === true &&
         checkEmail() === true &&
-        checkBirthdate() === true &&
-        checkTournamentsQuantity() === true &&
+        checkBirth() === true &&
+        checkTournaments() === true &&
         checkLocations() === true &&
         checkCheckBox() === true) {
         return true;
@@ -133,7 +126,8 @@ form.addEventListener('submit', function (e) {
     if (formValidation() == true) {
         displayModalSubmit();
         document.querySelector('form').reset();
+        
     } else {
-        forAllFieldsValidation();
+        forAllValidation();
     }
 });

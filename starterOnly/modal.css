@@ -486,6 +486,11 @@ footer {
   margin: 0 20px;
 }
 
+.modal-confirmation {
+  text-align: center;
+}
+
+
 @keyframes modalopen {
   from {
     opacity: 0;
