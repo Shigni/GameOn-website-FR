@@ -86,16 +86,16 @@ function checkCheckBox() {
     return true;
 }
 // Event form
-function Validation(element, method, event) {
+function validation(element, method, event) {
     element.addEventListener(event, method);
 }
-Validation(firstName, checkFirstName,  'submit');
-Validation(lastName, checkLastName,  'submit');
-Validation(email, checkEmail,'submit');
-Validation(birthdate, checkBirth,  'submit');
-Validation(quantity, checkTournaments, 'submit');
-Validation(allLocations, checkLocations, 'submit');
-Validation(checkbox1, checkCheckBox, 'submit');
+validation(firstName, checkFirstName,  'submit');
+validation(lastName, checkLastName,  'submit');
+validation(email, checkEmail,'submit');
+validation(birthdate, checkBirth,  'submit');
+validation(quantity, checkTournaments, 'submit');
+validation(allLocations, checkLocations, 'submit');
+validation(checkbox1, checkCheckBox, 'submit');
 
 function forAllValidation() {
     checkFirstName()
