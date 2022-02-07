@@ -166,6 +166,7 @@ main {
 }
 
 .modal-body {
+  height: 834px;
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -331,13 +332,19 @@ input[data-error]::after {
 }
 
 .btn-confirmation {
+  align-self: center;
+  position: absolute;
+  bottom: 30px;
   background: #fe142f;
   margin-top: 1em;
-  padding: 1em;
+  padding-top:12px ;
+  padding-left: 82px;
+  padding-bottom: 12px;
+  padding-right: 82px;
   color: #fff;
-  border-radius: 0.9375rem;
+  border-radius: 7px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   border: none;
 }
 
@@ -508,10 +515,18 @@ footer {
 }
 
 .modal-confirmation {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   display: none;
 }
 
+.modal-confirmation p {
+  font-weight: normal;
+  font-size: 2em;
+}
 
 @keyframes modalopen {
   from {
@@ -609,5 +624,28 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal-body {
+    height: inherit;
+    
+  }
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+  }
+  .content {
+    position: absolute;
+    top: 60px;
+  }
+  main {
+    margin-top: 80px;
+  }
+  .modal-confirmation {
+    min-height: 100vh;
   }
 }

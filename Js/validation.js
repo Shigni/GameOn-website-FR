@@ -17,7 +17,6 @@ function checkFirstName() {
         return false;
     }
     first.parentElement.setAttribute('data-error-visible', 'false');
-    first.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
 function checkLastName() {
@@ -27,7 +26,6 @@ function checkLastName() {
         return false;
     }
     last.parentElement.setAttribute('data-error-visible', 'false');
-    last.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
 // Check mail
@@ -35,7 +33,6 @@ function checkEmail() {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (email.value.trim().match(re)) {
         email.parentElement.setAttribute('data-error-visible', 'false');
-        email.style.border = 'solid #279e7a 0.19rem';
         return true;
     }
     email.parentElement.setAttribute('data-error-visible', 'true');
@@ -50,8 +47,7 @@ function checkBirth() {
         birthdate.style.border = '2px solid #e54858';
         return false;
     }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    birthdate.style.border = 'solid #279e7a 0.19rem';
+    birthdate.parentElement.setAttribute('data-error-visible', 'false');  
     return true;
 }
 // Check number 
@@ -62,7 +58,6 @@ function checkTournaments() {
         return false;
     }
     quantity.parentElement.setAttribute('data-error-visible', 'false');
-    quantity.style.border = 'solid #279e7a 0.19rem';
     return true;
 }
 // Check loc
@@ -126,7 +121,6 @@ form.addEventListener('submit', function (e) {
     if (formValidation() == true) {
         displayModalSubmit();
         document.querySelector('form').reset();
-        
     } else {
         forAllValidation();
     }

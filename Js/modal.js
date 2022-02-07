@@ -20,7 +20,10 @@ function editNav() {
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal
 function launchModal() {
-  modalbg.style.display = "block";
+  birthdate.parentElement.setAttribute('data-error-visible', 'false');
+  modalForm.style.display = 'block';
+  modalbg.style.display = 'block';
+  modalSubmit.style.display = 'none'; 
 }
 // Close modal
 function closeModal() {
@@ -32,8 +35,6 @@ closeValidationBtn.addEventListener('click', closeModal);
 // Display confirmation
 function displayModalSubmit() {
     modalForm.style.display = 'none';
-    modalSubmit.style.display = 'block';
-    
-    
+    modalSubmit.style.display = 'flex';   
 }
 
