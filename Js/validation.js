@@ -41,13 +41,13 @@ function checkEmail() {
 }
 // Check birthdate
 
-function checkBirth() {   
+function checkBirth() {
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
         birthdate.style.border = '2px solid #e54858';
         return false;
     }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');  
+    birthdate.parentElement.setAttribute('data-error-visible', 'false');
     return true;
 }
 // Check number 
@@ -80,14 +80,15 @@ function checkCheckBox() {
     checkbox1.parentElement.setAttribute('data-error-visible', 'false');
     return true;
 }
+
 // Event form
 function validation(element, method, event) {
     element.addEventListener(event, method);
 }
-validation(firstName, checkFirstName,  'submit');
-validation(lastName, checkLastName,  'submit');
-validation(email, checkEmail,'submit');
-validation(birthdate, checkBirth,  'submit');
+validation(firstName, checkFirstName, 'submit');
+validation(lastName, checkLastName, 'submit');
+validation(email, checkEmail, 'submit');
+validation(birthdate, checkBirth, 'submit');
 validation(quantity, checkTournaments, 'submit');
 validation(allLocations, checkLocations, 'submit');
 validation(checkbox1, checkCheckBox, 'submit');
@@ -121,6 +122,13 @@ form.addEventListener('submit', function (e) {
     if (formValidation() == true) {
         displayModalSubmit();
         document.querySelector('form').reset();
+        firstName.style.border = 'none';
+        lastName.style.border = 'none';
+        email.style.border = 'none';
+        birthdate.style.border = 'none';
+        quantity.style.border = 'none';
+        allLocations.style.border = 'none';
+        checkbox1.style.border = 'none';
     } else {
         forAllValidation();
     }
