@@ -43,7 +43,6 @@ function checkEmail() {
     return false;
 }
 // Check birthdate
-
 function checkBirth() {
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
@@ -85,7 +84,6 @@ function checkCheckBox() {
     checkbox1.parentElement.setAttribute('data-error-visible', 'false');
     return true;
 }
-
 // Event form
 function validation(element, method, event) {
     element.addEventListener(event, method);
