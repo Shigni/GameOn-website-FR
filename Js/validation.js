@@ -17,6 +17,7 @@ function checkFirstName() {
         return false;
     }
     first.parentElement.setAttribute('data-error-visible', 'false');
+    firstName.style.border = '2px solid #279e7a';
     return true;
 }
 function checkLastName() {
@@ -26,6 +27,7 @@ function checkLastName() {
         return false;
     }
     last.parentElement.setAttribute('data-error-visible', 'false');
+    lastName.style.border = '2px solid #279e7a';
     return true;
 }
 // Check mail
@@ -33,6 +35,7 @@ function checkEmail() {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (email.value.trim().match(re)) {
         email.parentElement.setAttribute('data-error-visible', 'false');
+        email.style.border = '2px solid #279e7a';
         return true;
     }
     email.parentElement.setAttribute('data-error-visible', 'true');
@@ -48,6 +51,7 @@ function checkBirth() {
         return false;
     }
     birthdate.parentElement.setAttribute('data-error-visible', 'false');
+    birthdate.style.border = '2px solid #279e7a';
     return true;
 }
 // Check number 
@@ -58,6 +62,7 @@ function checkTournaments() {
         return false;
     }
     quantity.parentElement.setAttribute('data-error-visible', 'false');
+    quantity.style.border = '2px solid #279e7a';
     return true;
 }
 // Check loc
